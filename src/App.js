@@ -9,8 +9,8 @@ class App extends React.Component {
   state = {
         searchterm : '',
     };
-    Value = async () => {
-      console.log('');
+    Value = async (T) => {
+      console.log(T);
       const response = await api.get('/search', {
           params: {
               q: ''
@@ -19,7 +19,7 @@ class App extends React.Component {
     }
   render(){
   return (
-    <Searchbar Test={this.Value}/>
+    <Searchbar handleFormSubmit={this.Value}/>
    
   );
   

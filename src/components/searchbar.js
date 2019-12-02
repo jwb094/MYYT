@@ -7,29 +7,24 @@ class SearchBar extends React.Component {
         this.state = {
             searchterm : ''
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.getValue = this.getValue.bind(this);
         }
 
-        handleClick() {
+        //get value from searchbar
+        getValue() {
             this.setState(state => ({
                 searchterm:document.getElementById('search_term').value
             }));
             console.log(this.state.searchterm);
           }
-       
-        
-        // getValue(){
-        //     this.state.searchterm =  document.getElementById('search_term').value;
-        //      console.log(this.state.searchterm);
-        // }
-
+          
     render() {
             
         return( 
         <div class="input-group mb-3">
         <input type="text" class="form-control" id="search_term" placeholder="Recipient's username" aria-describedby="button-addon2"></input>
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"  onClick={this.handleClick}>Button</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"  onClick={this.getValue}>Button</button>
         </div>
         </div>
             

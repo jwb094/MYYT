@@ -2,16 +2,26 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Searchbar from './components/searchbar';
+import api from './components/apicall';
 
-function App() {
-  return (
-    <Searchbar />
+class App extends React.Component {
+//function App() {
+  state = {
+        searchterm : ''
+    };
+    Value(){
+        
     
+    }
+
+  render(){
+  return (
+    <Searchbar GetValue={this.Value}/>
    
   );
   
 }
-
+}
 /*
 <div className="App">
       <header className="App-header">

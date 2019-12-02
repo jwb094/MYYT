@@ -7,16 +7,19 @@ import api from './components/apicall';
 class App extends React.Component {
 //function App() {
   state = {
-        searchterm : ''
+        searchterm : '',
     };
-    Value(){
-        
-    
+    Value = async () => {
+      console.log('');
+      const response = await api.get('/search', {
+          params: {
+              q: ''
+          }
+      })
     }
-
   render(){
   return (
-    <Searchbar GetValue={this.Value}/>
+    <Searchbar Test={this.Value}/>
    
   );
   

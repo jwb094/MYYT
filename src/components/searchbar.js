@@ -15,7 +15,8 @@ class SearchBar extends React.Component {
             this.setState(state => ({
                 searchterm:document.getElementById('search_term').value
             }));
-            console.log(this.state.searchterm);
+            this.props.Test = this.state.searchterm;
+            return this.state.searchterm;
           }
           
     render() {

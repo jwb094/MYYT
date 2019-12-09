@@ -13,13 +13,13 @@ class App extends React.Component {
     };
     
     Value = async (searchTerm) => {
- 
       console.log(searchTerm);
   
-      const response = await api.get('/search?', {
+      const response = await api.get('/search', {
           params: {
             part: 'snippet',
             q: searchTerm
+            
           }
       })
       .then(response => { 

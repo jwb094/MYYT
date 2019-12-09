@@ -9,13 +9,14 @@ class App extends React.Component {
   state = {
         searchterm : '',
     };
-    Value = async (T) => {
-      console.log(T);
+    Value = async (searchTerm) => {
+      console.log(searchTerm);
       const response = await api.get('/search', {
           params: {
-              q: ''
+              q: searchTerm
           }
       })
+      console.log(response);
     }
   render(){
   return (

@@ -7,16 +7,21 @@ import api from './components/apicall';
 class App extends React.Component {
 //function App() {
   state = {
-        searchterm : '',
+    videos:[],
+        searchterm : ''
     };
     Value = async (searchTerm) => {
-      console.log(searchTerm);
+      // console.log(searchTerm);
       const response = await api.get('/search', {
           params: {
               q: searchTerm
           }
-      })
+      });
       console.log(response);
+      this.setState({
+        videos:response
+      })
+     
     }
   render(){
   return (

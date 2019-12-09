@@ -12,11 +12,12 @@ class SearchBar extends React.Component {
 
         //get value from searchbar
         getValue() {
-            this.setState(state => ({
+            this.setState({
                 searchterm:document.getElementById('search_term').value
-            }));
+            });
            
-            this.props.handleFormSubmit(this.state.term);
+            this.props.handleFormSubmit(this.state.searchterm);
+            console.log(this.state.searchterm);
             return this.state.searchterm;
           }
           

@@ -15,14 +15,7 @@ class Videolist extends React.Component {
 
     render() {
             
-        return( 
-       
-            
-            
 
-            
-      
-            )
         }
 
 

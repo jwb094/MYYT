@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 import Searchbar from './components/searchbar';
@@ -7,20 +8,31 @@ import api from './components/apicall';
 class App extends React.Component {
 //function App() {
   state = {
-    videos:[],
-        searchterm : ''
+        videos:[],
+        sterm : ''
     };
+    
     Value = async (searchTerm) => {
-      // console.log(searchTerm);
-      const response = await api.get('/search', {
+ 
+      console.log(searchTerm);
+  
+      const response = await api.get('/search?', {
           params: {
-              q: searchTerm
+            part: 'snippet',
+            q: searchTerm
           }
-      });
-      console.log(response);
-      this.setState({
-        videos:response
       })
+      .then(response => { 
+        console.log(response)
+      })
+      .catch(error => {
+          console.log(error.response)
+      });
+    //   this.setState({
+    //     videos: response.data.items
+    // })
+  
+
      
     }
   render(){

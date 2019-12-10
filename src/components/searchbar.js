@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchterm : ''
+            term : ''
         };
         this.getValue = this.getValue.bind(this);
         }
@@ -13,12 +13,12 @@ class SearchBar extends React.Component {
         //get value from searchbar
         getValue() {
             this.setState({
-                searchterm:document.getElementById('search_term').value
+                term:document.getElementById('search_term').value
             });
            
-            this.props.handleFormSubmit(this.state.searchterm);
-            console.log(this.state.searchterm);
-            return this.state.searchterm;
+            this.props.handleFormSubmit(this.state.term);
+            console.log(this.state.term);
+            return this.state.term;
           }
           
     render() {

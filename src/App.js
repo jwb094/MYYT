@@ -7,7 +7,8 @@ import YTSearch from 'youtube-api-search';
 import YoutubeSearch from "youtube-api-search-reloaded";
 import betterYT from 'better-youtube-api';*/
 import Searchbar from './components/searchbar';
-import api from './components/apicall';
+import Videos from './components/videolist';
+//import api from './components/apicall';
 // import api from '.env';
 
 //const Key = 
@@ -22,10 +23,11 @@ class App extends React.Component {
    Value = (term) => {
       console.log(term);
       YTSearch({key:KEY,term}, videos => {
-        console.log(videos);
+       
         this.setState({
-        video:videos
+          videos:videos
       });
+      console.log(this.state.videos);
       });
       
     }
@@ -107,10 +109,18 @@ class App extends React.Component {
   render(){
   return (
     <div class="container">
-      <div className="row">
+      <div class="row">
         <Searchbar handleFormSubmit={this.Value}/>
       </div>
+      <div class="row">
+      <div class="col-sm-8">
+
+      </div>
+      <div class="col-sm-4">
+        <Videos videos={this.state.videos}/>
+      </div>
       
+      </div>
     </div>
     
    

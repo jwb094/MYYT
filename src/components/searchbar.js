@@ -23,13 +23,16 @@ class SearchBar extends React.Component {
           
     render() {
             
-        return( 
-        <div class="input-group mb-3">
-        <input type="text" class="form-control" id="search_term" placeholder="Recipient's username" aria-describedby="button-addon2"></input>
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"  onClick={this.getValue}>Button</button>
-        </div>
-        </div>
+        return(
+            <div class="col-sm-12">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="search_term" placeholder="Recipient's username" aria-describedby="button-addon2"></input>
+                    <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"  onClick={this.getValue}>Button</button>
+                    </div>
+                </div>
+            </div> 
+        
             
             
 

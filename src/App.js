@@ -1,13 +1,14 @@
 import React from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 import YTSearch from 'youtube-api-search';
-import searchYoutube from 'youtube-api-v3-search';
+/*import searchYoutube from 'youtube-api-v3-search';
 import YoutubeSearch from "youtube-api-search-reloaded";
-import betterYT from 'better-youtube-api';
+import betterYT from 'better-youtube-api';*/
 import Searchbar from './components/searchbar';
 import api from './components/apicall';
+// import api from '.env';
 
 //const Key = 
 const KEY = 'AIzaSyBKKzNb0wdn-oqgfyQY_Xi5r32PnwbD1HI'; 
@@ -22,7 +23,11 @@ class App extends React.Component {
       console.log(term);
       YTSearch({key:KEY,term}, videos => {
         console.log(videos);
+        this.setState({
+        video:videos
       });
+      });
+      
     }
 //searchYoutube
 
@@ -101,7 +106,13 @@ class App extends React.Component {
    // }
   render(){
   return (
-    <Searchbar handleFormSubmit={this.Value}/>
+    <div class="container">
+      <div className="row">
+        <Searchbar handleFormSubmit={this.Value}/>
+      </div>
+      
+    </div>
+    
    
   );
   

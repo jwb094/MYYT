@@ -17,7 +17,8 @@ class App extends React.Component {
 //function App() {
   state = {
         videos:[],
-        sterm : ''
+        selected:''
+        
     };
     //YTSearch
    Value = (term) => {
@@ -113,12 +114,12 @@ class App extends React.Component {
         <Searchbar handleFormSubmit={this.Value}/>
       </div>
       <div class="row">
-      <div class="col-sm-8">
+        <div class="col-sm-8">
 
-      </div>
-      <div class="col-sm-4">
-        <Videos videos={this.state.videos}/>
-      </div>
+        </div>
+        <div class="col-sm-4">
+          <Videos videos={this.state.videos}/>
+        </div>
       
       </div>
     </div>

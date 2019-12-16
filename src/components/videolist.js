@@ -30,9 +30,21 @@ const Videolist = ({videos }) => {
     const rendervids = videos.map((video) => { //foreach of new array of videos list
         console.log(video);
         return(
-        <h1>{video.id.videoId}
+            <ul class="list-group">
+            <li class="list-group-item">
+                
+                <div class="col-sm-6">
+                <img src= {video.snippet.thumbnails.medium.url}>
+                </img>
+               
 
-        </h1>)
+                {video.id.videoId}
+                </div>
+                <div class="col-sm-6"> {video.snippet.title}</div>
+               
+            </li>
+            </ul>
+)
     })
     return rendervids;
 };

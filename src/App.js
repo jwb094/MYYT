@@ -7,7 +7,7 @@ import YTSearch from 'youtube-api-search';
 import YoutubeSearch from "youtube-api-search-reloaded";
 import betterYT from 'better-youtube-api';*/
 import Searchbar from './components/searchbar';
-import Videos from './components/videolist';
+import VideosList from './components/videolist';
 //import api from './components/apicall';
 // import api from '.env';
 
@@ -118,7 +118,7 @@ class App extends React.Component {
 
         </div>
         <div class="col-sm-4">
-          <Videos videos={this.state.videos}/>
+          <VideosList videos={this.state.videos}/>
         </div>
       
       </div>

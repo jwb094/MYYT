@@ -109,16 +109,16 @@ class App extends React.Component {
    // }
   render(){
   return (
-    <div class="container">
-      <div class="row">
+    <div className="container">
+      <div className="row">
         <Searchbar handleFormSubmit={this.Value}/>
       </div>
-      <div class="row">
-        <div class="col-sm-8">
+      <div className="row">
+        <div className="col-sm-8">
 
         </div>
-        <div class="col-sm-4">
-          <VideosList videos={this.state.videos} selected={this.state.}/>
+        <div className="col-sm-4">  
+          <VideosList videos={this.state.videos} selected={this.state.selected}/>
         </div>
       
       </div>

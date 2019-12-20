@@ -11,26 +11,32 @@ import VideosList from './components/videolist';
 //import api from './components/apicall';
 // import api from '.env';
 
-//const Key = 
 const KEY = 'AIzaSyBKKzNb0wdn-oqgfyQY_Xi5r32PnwbD1HI'; 
 class App extends React.Component {
 //function App() {
   state = {
         videos:[],
-        selected:''
+        selected_vid:''
         
     };
+  
     //YTSearch
    Value = (term) => {
       console.log(term);
+      //using npm packaging call api to youtube to search for videos
       YTSearch({key:KEY,term}, videos => {
-       
+        // from result setstate => which will be used in component Videoslist to render list
         this.setState({
           videos:videos
       });
       console.log(this.state.videos);
+      // console.log(this.state.selected);
       });
       
+    
+    };
+    selected = (video) => {
+      console.log(video);
     }
 //searchYoutube
 
@@ -109,7 +115,10 @@ class App extends React.Component {
    // }
   render(){
   return (
+
+
     <div className="container">
+    {process.env.DB_PASS}
       <div className="row">
         <Searchbar handleFormSubmit={this.Value}/>
       </div>
@@ -118,7 +127,7 @@ class App extends React.Component {
 
         </div>
         <div className="col-sm-4">  
-          <VideosList videos={this.state.videos} selected={this.state.selected}/>
+          <VideosList videos={this.state.videos} selected={this.selected}/>
         </div>
       
       </div>

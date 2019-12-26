@@ -18,7 +18,7 @@ class App extends React.Component {
 //function App() {
   state = {
         videos:[],
-        selected_vid:''
+        selected_vid:null
         
     };
   
@@ -129,7 +129,7 @@ class App extends React.Component {
       </div>
       <div className="row">
         <div className="col-sm-8">
-          <Video selected_vid={this.state.selected_vid} />
+          <Video video={this.state.selected_vid} />
         </div>
         <div className="col-sm-4">  
           <VideosList videos={this.state.videos} selected={this.selected}/>

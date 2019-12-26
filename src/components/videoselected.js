@@ -12,9 +12,19 @@ const render_vid = ({video}) => {
     let src = `https://www.youtube.com/embed/${video.id.videoId}`;
     return(
         <div className="col-md-12">
-           <h1>dsfsd</h1>
-        <iframe src={src}  allowFullScreen title='Video player'/> 
+           {/* <h1>dsfsd</h1> */}
+           <div>
+            <iframe src={src}  width="100%" height="500px"
+                    frameborder="0" scrolling="no"  allowFullScreen title='Video player'/> 
+           </div>
+           <div>  
+            <p>{video.snippet.title}</p>
+               <p>{video.snippet.title}</p>
+               <p>{video.snippet.description}</p>
+            </div>
+        
         </div>
+
         
     )
 

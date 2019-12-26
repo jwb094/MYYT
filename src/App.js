@@ -123,12 +123,11 @@ class App extends React.Component {
 
 
     <div className="container">
-    {/* {process.env.DB_PASS} */}
       <div className="row">
         <Searchbar handleFormSubmit={this.Value}/>
       </div>
       <div className="row">
-        <div className="col-sm-8">
+        <div className="col-md-8">
           <Video video={this.state.selected_vid} />
         </div>
         <div className="col-sm-4">  

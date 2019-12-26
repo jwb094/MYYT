@@ -10,7 +10,7 @@ import Searchbar from './components/searchbar';
 import VideosList from './components/videolist';
 //import api from './components/apicall';
 // import api from '.env';
-
+console.log(process.env.REACT_YT_API_KEY);
 const KEY = 'AIzaSyBKKzNb0wdn-oqgfyQY_Xi5r32PnwbD1HI'; 
 class App extends React.Component {
 //function App() {
@@ -118,7 +118,7 @@ class App extends React.Component {
 
 
     <div className="container">
-    {process.env.DB_PASS}
+    {/* {process.env.DB_PASS} */}
       <div className="row">
         <Searchbar handleFormSubmit={this.Value}/>
       </div>

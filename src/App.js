@@ -8,9 +8,11 @@ import YoutubeSearch from "youtube-api-search-reloaded";
 import betterYT from 'better-youtube-api';*/
 import Searchbar from './components/searchbar';
 import VideosList from './components/videolist';
+import Video from './components/videoselected';
 //import api from './components/apicall';
 // import api from '.env';
-console.log(process.env.REACT_YT_API_KEY);
+// console.log(process.env.REACT_APP_KEY);
+// console.log(process.env.KEY);
 const KEY = 'AIzaSyBKKzNb0wdn-oqgfyQY_Xi5r32PnwbD1HI'; 
 class App extends React.Component {
 //function App() {
@@ -24,7 +26,7 @@ class App extends React.Component {
    Value = (term) => {
       console.log(term);
       //using npm packaging call api to youtube to search for videos
-      YTSearch({key:KEY,term}, videos => {
+      YTSearch({key:process.env.REACT_APP_KEY,term}, videos => {
         // from result setstate => which will be used in component Videoslist to render list
         this.setState({
           videos:videos
@@ -37,6 +39,9 @@ class App extends React.Component {
     };
     selected = (video) => {
       console.log(video);
+        this.setState({
+          selected_vid:video
+      });
     }
 //searchYoutube
 
@@ -124,7 +129,7 @@ class App extends React.Component {
       </div>
       <div className="row">
         <div className="col-sm-8">
-
+          <Video selected_vid={this.state.selected_vid} />
         </div>
         <div className="col-sm-4">  
           <VideosList videos={this.state.videos} selected={this.selected}/>

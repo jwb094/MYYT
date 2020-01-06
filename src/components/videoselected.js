@@ -7,12 +7,11 @@ const render_vid = ({video}) => {
     if (!video) {
         return <div>Loading ...</div>;
     }
-
-       
+   
+    let  channel = `https://www.youtube.com/channel/${video.snippet.channelId}`;
     let src = `https://www.youtube.com/embed/${video.id.videoId}`;
     return(
         <div className="col-md-12">
-           {/* <h1>dsfsd</h1> */}
            <div>
             <iframe src={src}  width="100%" height="500px"
                     frameborder="0" scrolling="no"  allowFullScreen title='Video player'/> 
@@ -23,7 +22,7 @@ const render_vid = ({video}) => {
             </div>
             <hr/>
             <div>
-            <h5>{video.snippet.channelTitle}</h5>
+            <h5 className="text-capitalize"><a href={channel}>{video.snippet.channelTitle}</a></h5>
             <p>{video.snippet.description}</p>
           
             </div>

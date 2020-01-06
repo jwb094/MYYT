@@ -24,7 +24,7 @@ class App extends React.Component {
   
     //YTSearch
    Value = (term) => {
-      console.log(term);
+      //console.log(term);
       //using npm packaging call api to youtube to search for videos
       YTSearch({key:process.env.REACT_APP_KEY,term}, videos => {
         // from result setstate => which will be used in component Videoslist to render list
@@ -38,7 +38,7 @@ class App extends React.Component {
     
     };
     selected = (video) => {
-      console.log(video);
+     //console.log(video);
         this.setState({
           selected_vid:video
       });

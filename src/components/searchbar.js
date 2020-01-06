@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
             });
            
             this.props.handleFormSubmit(this.state.term);
-            console.log(this.state.term);
+            //console.log(this.state.term);
             return this.state.term;
           }
           

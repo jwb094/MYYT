@@ -2,7 +2,7 @@ import React from 'react';
 
 const Videolist = ({videos, selected}) => {
     const rendervideolist = videos.map((video) => { //foreach of new array of videos list
-        console.log(video);
+     //  console.log(video);
         return(
             
                 <li className="list-group-item" onClick={() => selected(video)}>

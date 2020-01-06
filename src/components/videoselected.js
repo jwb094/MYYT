@@ -7,7 +7,7 @@ const render_vid = ({video}) => {
     if (!video) {
         return <div>Loading ...</div>;
     }
-   
+   let date = new Date(video.snippet.publishedAt).toDateString();
     let  channel = `https://www.youtube.com/channel/${video.snippet.channelId}`;
     let src = `https://www.youtube.com/embed/${video.id.videoId}`;
     return(
@@ -19,6 +19,7 @@ const render_vid = ({video}) => {
            <div>  
 
                <h3 className="text-capitalize">{video.snippet.title}</h3>
+               <p className="text-capitalize">{date}</p>
             </div>
             <hr/>
             <div>

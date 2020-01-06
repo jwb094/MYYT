@@ -7,8 +7,8 @@ const Videolist = ({videos, selected}) => {
             
                 <li className="list-group-item" onClick={() => selected(video)}>
                     <div className="col-sm-12">
-                        <img src= {video.snippet.thumbnails.medium.url}></img>
-                        {video.id.videoId}
+                        <img src= {video.snippet.thumbnails.default.url}></img>
+                        
                     </div>
                     <div className="col-sm-12">
                         {video.snippet.title}

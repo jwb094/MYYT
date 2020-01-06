@@ -18,11 +18,15 @@ const render_vid = ({video}) => {
                     frameborder="0" scrolling="no"  allowFullScreen title='Video player'/> 
            </div>
            <div>  
-            <p>{video.snippet.title}</p>
-               <p>{video.snippet.title}</p>
-               <p>{video.snippet.description}</p>
+
+               <h3 className="text-capitalize">{video.snippet.title}</h3>
             </div>
-        
+            <hr/>
+            <div>
+            <h5>{video.snippet.channelTitle}</h5>
+            <p>{video.snippet.description}</p>
+          
+            </div>
         </div>
 
         
